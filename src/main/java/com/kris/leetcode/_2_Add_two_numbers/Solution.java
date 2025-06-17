@@ -41,27 +41,60 @@ public class Solution {
 
         ListNode() {
         }
-
-        ;
-
         ListNode(int val) {
             this.val = val;
         }
-
-        ;
-
         ListNode(int val, ListNode next) {
             this.val = val;
             this.next = next;
         }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null || getClass() != obj.getClass()) {
+                return false;
+            }
+            ListNode other = (ListNode) obj;
+
+            // Проверяем текущее значение узла и рекурсивно проверяем следующий узел
+            return val == other.val && (next == null ? other.next == null : next.equals(other.next));
+        }
+
+        @Override
+        public int hashCode() {
+            final int prime = 31;
+            int result = 1;
+
+            // Вычисляем хеш-код на основе значения и хеш-кода следующего узла
+            result = prime * result + val;
+            result = prime * result + (next == null ? 0 : next.hashCode());
+            return result;
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("ListNode(");
+            sb.append(val);
+            ListNode current = next;
+            while (current != null) {
+                sb.append(" -> ");
+                sb.append(current.val);
+                current = current.next;
+            }
+            sb.append(")");
+            return sb.toString();
+        }
+
     }
 
 //    по памяти лучше
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode result = null;
         ListNode revertResult = null;
-        ListNode l1 = l1;
-        ListNode l2 = l2;
 
         int predVUme = 0;
         while (l1 != null || l2 != null) {
