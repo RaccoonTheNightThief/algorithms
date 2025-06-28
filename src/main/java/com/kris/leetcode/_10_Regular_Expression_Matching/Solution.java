@@ -45,9 +45,5 @@ public class Solution {
         Pattern pattern = Pattern.compile(p);
         Matcher m = pattern.matcher(s);
         return m.matches();
-//        String regular = s.replaceAll(pattern, "#");
-//        if (!regular.equals(s)) return true;
-//        else return false;
     }
-
 }
