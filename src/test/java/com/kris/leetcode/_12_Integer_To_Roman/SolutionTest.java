@@ -1,4 +1,4 @@
-package com.kris.leetcode._12_IntegerToRoman;
+package com.kris.leetcode._12_Integer_To_Roman;
 
 import org.junit.jupiter.api.Test;
 

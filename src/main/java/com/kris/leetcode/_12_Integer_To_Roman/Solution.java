@@ -1,7 +1,4 @@
-package com.kris.leetcode._12_IntegerToRoman;
-
-import java.util.HashMap;
-import java.util.Map;
+package com.kris.leetcode._12_Integer_To_Roman;
 
 /**
  * Seven different symbols represent Roman numerals with the following values:
