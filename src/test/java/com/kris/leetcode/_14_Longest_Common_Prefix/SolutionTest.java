@@ -30,4 +30,27 @@ class SolutionTest {
         var actual = solution.longestCommonPrefix(new String[]{"flower","flower","flower","flower"});
         assertEquals("flower", actual);
     }
+
+    @Test
+    void longestCommonPrefix5() {
+        var actual = solution.longestCommonPrefix1(new String[]{"flower","flow","flight"});
+        assertEquals("fl", actual);
+    }
+
+    @Test
+    void longestCommonPrefix6() {
+        var actual = solution.longestCommonPrefix1(new String[]{"dog","racecar","car"});
+        assertEquals("", actual);
+    }
+
+    @Test
+    void longestCommonPrefix7() {
+        var actual = solution.longestCommonPrefix1(new String[]{""});
+        assertEquals("", actual);
+    }
+    @Test
+    void longestCommonPrefix8() {
+        var actual = solution.longestCommonPrefix1(new String[]{"flower","flower","flower","flower"});
+        assertEquals("flower", actual);
+    }
 }

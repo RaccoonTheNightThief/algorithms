@@ -1,5 +1,7 @@
 package com.kris.leetcode._14_Longest_Common_Prefix;
 
+import java.util.Objects;
+
 /**
  * 14. Longest Common Prefix
  * <p>
@@ -34,7 +36,7 @@ public class Solution {
         int indexCharacter = 0;
         String temp;
         int i = 0;
-        while ( i < length) {
+        while (i < length) {
 
             try {
                 temp = strs[i].substring(0, indexCharacter + 1);
@@ -57,10 +59,8 @@ public class Solution {
                     continue;
                 }
                 result = temp;
-            }
-            else
-            {
-                if (i != 0){
+            } else {
+                if (i != 0) {
                     return result.substring(0, result.length() - 1);
                 }
             }
@@ -69,8 +69,38 @@ public class Solution {
         return result;
     }
 
+
     public String longestCommonPrefix1(String[] strs) {
-        //todo
-        return null;
+        if (Objects.isNull(strs) || strs.length == 0) return "";
+
+        String commonPart = strs[0];
+
+        for (int i = 1; i < strs.length; i++) {
+            String temp = strs[i];
+            while (commonPart.length() > temp.length() || !commonPart.equals(temp.substring(0, commonPart.length()))) {
+                commonPart = commonPart.substring(0, commonPart.length() - 1);
+            }
+        }
+        return commonPart;
     }
 }
+
+/*
+      if (strs == null || strs.length == 0) return "";
+
+        String pref = strs[0];
+        int prefLen = pref.length();
+
+        for (int i = 1; i < strs.length; i++) {
+            String s = strs[i];
+            while (prefLen > s.length() || !pref.equals(s.substring(0, prefLen))) {
+                prefLen--;
+                if (prefLen == 0) {
+                    return "";
+                }
+                pref = pref.substring(0, prefLen);
+            }
+        }
+
+        return pref;
+ */
