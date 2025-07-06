@@ -1,7 +1,10 @@
 package com.kris.leetcode.Sorts;
 
+/**
+ * Пузырьковая сортировка.
+ * O(n^2)
+ */
 public class BubbleSort {
-
 
     public int[] bubbleSort(int[] arr) {
 //        var actual = bs.bubbleSort(new int[]{4,11,5,6,1});
