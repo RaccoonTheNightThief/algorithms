@@ -75,5 +75,120 @@ class SolutionTest {
         assertEquals(true, true);
     }
 
+    @Test
+    void threeSum11() {
+
+        var actual = solution.threeSum1(new int[]{-1, 0, 1, 2, -1, -4});
+
+        Assertions.assertThat(actual)
+                .containsExactlyInAnyOrder(
+                        List.of(-1, -1, 2),
+                        List.of(-1, 0, 1)
+                );
+    }
+
+    @Test
+    void threeSum12() {
+        var actual = solution.threeSum1(new int[]{0, 1, 1});
+        assertEquals(List.of(), actual);
+    }
+
+    @Test
+    void threeSum13() {
+        List<List<Integer>> expected = List.of(
+                List.of(0, 0, 0)
+        );
+
+        var actual = solution.threeSum1(new int[]{0, 0, 0});
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void threeSum14() {
+//                                                                 0   1  2   3   4   5   6  7  8  9  10 11 12  13 14 15   16
+        var actual = solution.threeSum1(new int[]{2, -3, 0, -2, -5, -5, -4, 1, 2, -2, 2, 0, 2, -4, 5, 5, -10});
+
+        Assertions.assertThat(actual)
+                .containsExactlyInAnyOrder(
+                        List.of(-10, 5, 5),
+                        List.of(-5, 0, 5),
+                        List.of(-4, 2, 2),
+                        List.of(-3, -2, 5),
+                        List.of(-3, 1, 2),
+                        List.of(-2, 0, 2)
+                );
+    }
+
+    @Test
+    void threeSum15() {
+//                                                             0  1   2   3  4  5
+        var actual = solution.threeSum1(new int[]{3, 0, -2, -1, 1, 2});
+
+        Assertions.assertThat(actual)
+                .containsExactlyInAnyOrder(
+                        List.of(-2, -1, 3),
+                        List.of(-1, 0, 1),
+                        List.of(-2, 0, 2)
+                );
+    }
+
+    @Test
+    void threeSumBest1() {
+
+        var actual = solution.threeSumBest(new int[]{-1, 0, 1, 2, -1, -4});
+
+        Assertions.assertThat(actual)
+                .containsExactlyInAnyOrder(
+                        List.of(-1, -1, 2),
+                        List.of(-1, 0, 1)
+                );
+    }
+
+    @Test
+    void threeSumBest2() {
+        var actual = solution.threeSumBest(new int[]{0, 1, 1});
+        assertEquals(List.of(), actual);
+    }
+
+    @Test
+    void threeSumBest3() {
+        List<List<Integer>> expected = List.of(
+                List.of(0, 0, 0)
+        );
+
+        var actual = solution.threeSumBest(new int[]{0, 0, 0});
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void threeSumBest4() {
+//                                                                 0   1  2   3   4   5   6  7  8  9  10 11 12  13 14 15   16
+        var actual = solution.threeSumBest(new int[]{2, -3, 0, -2, -5, -5, -4, 1, 2, -2, 2, 0, 2, -4, 5, 5, -10});
+
+        Assertions.assertThat(actual)
+                .containsExactlyInAnyOrder(
+                        List.of(-10, 5, 5),
+                        List.of(-5, 0, 5),
+                        List.of(-4, 2, 2),
+                        List.of(-3, -2, 5),
+                        List.of(-3, 1, 2),
+                        List.of(-2, 0, 2)
+                );
+    }
+
+    @Test
+    void threeSumBest5() {
+//                                                             0  1   2   3  4  5
+        var actual = solution.threeSumBest(new int[]{3, 0, -2, -1, 1, 2});
+
+        Assertions.assertThat(actual)
+                .containsExactlyInAnyOrder(
+                        List.of(-2, -1, 3),
+                        List.of(-1, 0, 1),
+                        List.of(-2, 0, 2)
+                );
+    }
+
+
 
 }
